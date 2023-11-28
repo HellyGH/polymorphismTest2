@@ -7,6 +7,7 @@ public class Student extends Person implements Printable{
         this.grade=grade;
     }
     public double getGrade() {
+
         return grade;
     }
     //public void introduce() {
