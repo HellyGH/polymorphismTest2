@@ -13,6 +13,7 @@ public class PersonTest {
     public void testConstructorWithParameters() {
         var p = new Person("Helly", 20);
         assertEquals("Helly", p.getName());
+        assertEquals(20,p.getAge());
 
     }
     @Test
