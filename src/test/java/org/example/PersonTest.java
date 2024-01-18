@@ -1,26 +1,25 @@
 package org.example;
 
 import org.junit.Test;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.jupiter.api.Assertions.*;
-
-
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 public class PersonTest {
+    private Person person;
     @Test
-    public void testConstructorWithParameters() {
-        var p = new Person("Helly", 20);
-        assertEquals("Helly", p.getName());
-        assertEquals(20,p.getAge());
+    @ParameterizedTest
+    @CsvSource({
+            "Helly,20",
+            "Teo,18",
+            "Katrin,28"
+
+    })
+    public void testConstructorWithParameters(String name, int age) {
+        person = new Person(name,age);
+        Assertions.assertEquals(name,person.getName());
+        Assertions.assertEquals(age,person.getAge());
 
     }
-    @Test
-    public void testPrintDetails() {
 
-
-
-    }
 
 }
